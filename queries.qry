@@ -1,0 +1,49 @@
+/**
+ * New query file
+ */
+
+query selectAllPlatform {
+  	description: "Select all platform"
+  	statement:
+  		SELECT org.nexus.basic.Platform
+}
+
+query selectDataByPlatform {
+ 	description: "Select data by platform"
+  	statement:
+  		SELECT org.nexus.basic.Platform
+  			WHERE (platformID==_$platformID)
+}
+
+query selectAllData {
+ 	description: "Select all train data"
+ 	statement:
+  		SELECT org.nexus.basic.Sensor
+}
+
+query selectDataByTrain {
+ 	description: "Select data of a train"
+  	statement:
+  		SELECT org.nexus.basic.Sensor
+  			WHERE (trainID==_$trainID)
+}
+
+
+query selectAllEvents {
+	description: "Select all events"
+  	statement:
+  		SELECT org.nexus.basic.Event
+}
+
+query selectAllPromotions {
+  	description: "Select all promotions"
+  	statement:
+  		SELECT org.nexus.basic.Promotion
+}
+
+query selectFirstTrains {
+ 	description: "Select Trains"
+  	statement:
+  		SELECT org.nexus.basic.Sensor
+  			WHERE (order == _$order)
+}

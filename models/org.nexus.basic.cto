@@ -1,0 +1,82 @@
+/**
+ * business network definition.
+ */
+namespace org.nexus.basic
+
+asset Event identified by eventID {
+  o String eventID
+  o String eventName
+  o String eventDescription
+  o String eventDate
+  o String eventLocation
+  o String eventType
+}
+
+asset Promotion identified by promotionID {
+  o String promotionID
+  o String promotionName
+  o String promotionDescription
+  o String promotionType
+  o String promoter
+  o String stationNear
+}
+
+asset Platform identified by platformID {
+   o String platformID
+   o String stationID
+   o Integer volume
+}
+
+transaction setSpeed {
+  --> Sensor sp
+   o Integer newSpeed
+}
+
+transaction SetVolumePlatform {
+ 	--> Platform vol
+    o Integer newVolume
+}
+
+asset Sensor identified by trainID {
+  o String trainID
+  o String trainNumber
+  o Integer order
+  o Integer speed
+  o Double temperature
+  o Double locationLat
+  o Double locationLon
+  o String sentiment
+  o Integer volume
+}
+
+transaction setOrder {
+  --> Sensor ord
+  o Integer newOrder
+}
+
+transaction SetSensorTemp {
+  --> Sensor temp
+   o Double newTemperature
+  
+}
+
+transaction SetLocationLat {
+  --> Sensor lat
+   o Double newLocationLat
+  
+}
+
+transaction SetLocationLon {
+  --> Sensor lon
+   o Double newLocationLon
+}
+
+transaction SetSentiment {
+  --> Sensor sent
+  o String newSentiment
+}
+
+transaction SetVolume {
+  --> Sensor vol
+  o Integer newVolume
+}
